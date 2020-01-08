@@ -1,6 +1,7 @@
 package com.example.fininuiapplication.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fininuiapplication.R;
@@ -49,13 +52,13 @@ public class SuggestionAdapter extends RecyclerView.Adapter<SuggestionAdapter.Vi
             String name = suggestionDto.getName();
             holder.name.setText(name);
 
-            holder.icon.setImageDrawable(getImageAccordingToName(name));
+            holder.icon.setImageDrawable(getImageAccordingToName(name, holder.icon));
             String priceStr = suggestionDto.getPrice() + "";
             holder.price.setText(priceStr);
         }
     }
 
-    private Drawable getImageAccordingToName(String name) {
+    private Drawable getImageAccordingToName(String name, ImageView icon) {
         if (name.equalsIgnoreCase(FOOD_DRINK)) {
             return ContextCompat.getDrawable(context, R.mipmap.ic_person_icon);
         } else if (name.equalsIgnoreCase(HOUSING)) {
@@ -77,7 +80,7 @@ public class SuggestionAdapter extends RecyclerView.Adapter<SuggestionAdapter.Vi
 
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageView icon;
-        TextView name,price;
+        TextView name, price;
 
         ViewHolder(View view) {
             super(view);
