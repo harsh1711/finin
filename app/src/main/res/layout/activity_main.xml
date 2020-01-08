@@ -7,32 +7,20 @@
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <!--START: icon edit layout-->
+
+        <include
+            layout="@layout/icon_edit_layout"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="15dp" />
 
-            <include
-                layout="@layout/person_icon_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true" />
-
-            <include
-                layout="@layout/edit_button_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="8dp" />
-
-        </RelativeLayout>
+        <!--START: food & drink header layout-->
 
         <include
             layout="@layout/food_drink_lbl_layout"
@@ -42,76 +30,43 @@
             android:layout_marginTop="10dp" />
 
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <!--START: price layout-->
+
+        <include
+            layout="@layout/price_lbl_layout"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp">
+            android:layout_marginEnd="10dp" />
 
-            <include
-                android:id="@+id/start_price_layout"
-                layout="@layout/price_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true" />
-
-            <include
-                android:id="@+id/spend_price_layout"
-                layout="@layout/price_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true" />
-
-            <include
-                android:id="@+id/end_price_layout"
-                layout="@layout/price_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerHorizontal="true" />
-
-        </RelativeLayout>
-
+        <!--START: progress bar layout-->
 
         <include
             layout="@layout/progress_bar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="10dp" />
 
-        <com.highsoft.highcharts.core.HIChartView
-            android:id="@+id/hc"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="8dp" />
+        <!--START: chart layout-->
 
-        <LinearLayout
+        <include
+            layout="@layout/chart_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginBottom="8dp" />
 
+        <!--START: on track layout-->
 
-            <include
-                layout="@layout/on_track_tv_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp" />
+        <include
+            layout="@layout/on_track_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="10dp"
-                android:gravity="center"
-                android:text="@string/average_budget_per_day"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-        </LinearLayout>
+        <!--START: hr line layout-->
 
         <include
             layout="@layout/hr_line_layout"
@@ -122,40 +77,15 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="10dp" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
+        <!--START: transactions layout-->
+
+        <include
+            layout="@layout/transactions_layout"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_gravity="center"
-                android:layout_marginStart="10dp"
-                android:gravity="center"
-                android:typeface="sans"
-                android:text="@string/transactions"
-                android:textColor="@color/dark_gray"
-                android:textSize="18sp" />
-
-            <include
-                layout="@layout/add_bill_layout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="10dp" />
-
-        </RelativeLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/transactionsRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="8dp"
-            android:visibility="gone" />
+        <!--START: transactionsRecyclerView layout-->
 
         <include
             android:id="@+id/transactionsRecyclerViewLayout"
@@ -164,7 +94,28 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="8dp" />
+            android:layout_marginEnd="8dp"
+            android:visibility="visible" />
+
+        <!--START: month layout-->
+
+        <include
+            android:id="@+id/spinner_title_layout"
+            layout="@layout/custom_spinner_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp" />
+
+        <!--START: budget income layout-->
+
+        <include
+            layout="@layout/budget_income_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp" />
+
+        <!--START: hr line layout-->
 
         <include
             layout="@layout/hr_line_layout"
@@ -172,33 +123,21 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="10dp"
-            android:visibility="gone" />
+            android:layout_marginEnd="8dp" />
 
-
-        <include android:id="@+id/spinner_title_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            layout="@layout/custom_spinner_layout"/>
-
-        <!--START: budgest income layout-->
+        <!--START: budgeting info layout-->
 
         <include
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            layout="@layout/budget_income_layout"/>
-
-
-        <!--START: budgesting info layout-->
+            layout="@layout/budgeting_info_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp">
+            android:layout_marginTop="12dp"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -218,6 +157,8 @@
 
         </LinearLayout>
 
+        <!--START:suggestion RecyclerView Layout-->
+
         <include
             android:id="@+id/suggestionRecyclerViewLayout"
             layout="@layout/recycler_view_layout"
@@ -226,12 +167,6 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="8dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_marginTop="10dp" />
-
 
     </LinearLayout>
 
