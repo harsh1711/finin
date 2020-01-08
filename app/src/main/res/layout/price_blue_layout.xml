@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/rupee_sign_blue"
-        android:text="4,300"
+        android:text="40,000"
         android:textStyle="bold"
         android:textColor="@color/blue"
         android:textSize="16sp"/>

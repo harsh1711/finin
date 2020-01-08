@@ -10,6 +10,6 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/circle"
-        android:src="@drawable/ic_person_black_24dp" />
+        android:src="@mipmap/ic_person_icon" />
 
 </LinearLayout>

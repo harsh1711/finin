@@ -16,17 +16,15 @@
     <string name="total_budget">Total Budget</string>
 
     <string-array name="type_array">
-        <item>Select</item>
+        <item>Monthly</item>
         <item>Daily</item>
         <item>Weekly</item>
-        <item>Monthly</item>
     </string-array>
 
     <string-array name="month_array">
-        <item>123</item>
-        <item>234</item>
-        <item>345</item>
-        <item>456</item>
+        <item>December</item>
+        <item>January</item>
+        <item>February</item>
     </string-array>
 
 

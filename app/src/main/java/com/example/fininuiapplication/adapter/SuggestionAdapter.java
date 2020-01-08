@@ -57,11 +57,11 @@ public class SuggestionAdapter extends RecyclerView.Adapter<SuggestionAdapter.Vi
 
     private Drawable getImageAccordingToName(String name) {
         if (name.equalsIgnoreCase(FOOD_DRINK)) {
-            return ContextCompat.getDrawable(context, R.drawable.ic_person_black_24dp);
+            return ContextCompat.getDrawable(context, R.mipmap.ic_person_icon);
         } else if (name.equalsIgnoreCase(HOUSING)) {
-            return ContextCompat.getDrawable(context, R.drawable.ic_phone_android_black_24dp);
+            return ContextCompat.getDrawable(context, R.mipmap.ic_mobile_icon);
         } else if (name.equalsIgnoreCase(TRANSPORTATION)) {
-            return ContextCompat.getDrawable(context, R.drawable.ic_call_split_black_24dp);
+            return ContextCompat.getDrawable(context, R.mipmap.ic_srike_icon);
         }
         return null;
     }
