@@ -135,6 +135,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="10dp"
                 android:gravity="center"
+                android:typeface="sans"
                 android:text="@string/transactions"
                 android:textColor="@color/dark_gray"
                 android:textSize="18sp" />

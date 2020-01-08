@@ -11,13 +11,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <include
-        layout="@layout/food_drink_lbl_layout"
+    <TextView
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:textSize="16sp"
+        android:text="food "
+        android:baselineAligned="false"
         android:layout_marginStart="8dp"
-        android:baselineAligned="false" />
+        android:layout_gravity="center"
+        android:textColor="@color/black" />
 
 
     <include

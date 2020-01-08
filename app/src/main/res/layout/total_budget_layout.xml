@@ -4,7 +4,10 @@
     android:layout_height="wrap_content"
     android:background="@drawable/rounded_pink_background"
     android:orientation="vertical"
-    android:padding="10dp">
+    android:paddingTop="12dp"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
+    android:paddingBottom="12dp">
 
     <include layout="@layout/header_layout" />
 

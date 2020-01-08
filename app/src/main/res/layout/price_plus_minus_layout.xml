@@ -18,6 +18,7 @@
         android:textSize="14sp"
         android:textColor="@color/black"
         android:textStyle="bold"
+        android:typeface="sans"
         android:drawableStart="@drawable/rupee_sign_currency_symbol"
         android:text="999.90" />
 

@@ -11,8 +11,15 @@
     <color name="blue">#733df6</color>
     <color name="sky_blue">#dbf5ff</color>
     <color name="dark_gray">#888888</color>
-    <color name="on_track">#ffedc9</color>
+    <color name="on_track">#ffedca</color>
     <color name="light">#efefff</color>
     <color name="red">#ff6665</color>
+
+
+    <color name="purple">#efe6ff</color>
+    <color name="edit_text">#efefff</color>
+    <color name="cyan">#dcf5fe</color>
+
+
 
 </resources>

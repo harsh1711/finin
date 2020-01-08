@@ -12,6 +12,7 @@
         android:drawableEnd="@drawable/ic_arrow_upward_red"
         android:textColor="@color/black"
         android:textStyle="bold"
+        android:typeface="sans"
         android:text="999.90" />
 
 </LinearLayout>
