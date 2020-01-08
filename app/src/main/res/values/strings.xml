@@ -10,4 +10,22 @@
     <string name="transactions">Transactions</string>
     <string name="edit">Edit</string>
     <string name="budgeting_suggesting_based_your_profile">Budgeting Suggesting based on your profile!</string>
+    <string name="purpose_of_budget">Purpose of budget</string>
+    <string name="month">Month</string>
+
+    <string-array name="type_array">
+        <item>Select</item>
+        <item>Daily</item>
+        <item>Weekly</item>
+        <item>Monthly</item>
+    </string-array>
+
+    <string-array name="month_array">
+        <item>123</item>
+        <item>234</item>
+        <item>345</item>
+        <item>456</item>
+    </string-array>
+
+
 </resources>

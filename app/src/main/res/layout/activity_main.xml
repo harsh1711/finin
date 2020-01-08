@@ -83,6 +83,13 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp" />
 
+        <com.highsoft.highcharts.core.HIChartView
+            android:id="@+id/hc"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="8dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -169,6 +176,25 @@
             android:layout_marginBottom="10dp"
             android:visibility="gone" />
 
+
+        <include android:id="@+id/spinner_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            layout="@layout/custom_spinner_layout"/>
+
+        <!--START: budgest income layout-->
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            layout="@layout/budget_income_layout"/>
+
+
+        <!--START: budgesting info layout-->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -191,7 +217,6 @@
 
 
         </LinearLayout>
-
 
         <include
             android:id="@+id/suggestionRecyclerViewLayout"

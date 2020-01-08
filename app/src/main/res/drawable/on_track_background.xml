@@ -6,5 +6,5 @@ android:shape="rectangle">
     android:left="12dp"
     android:right="12dp" />
 
-<solid android:color="@color/peach" />
+<solid android:color="@color/on_track" />
 </shape>
