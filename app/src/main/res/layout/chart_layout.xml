@@ -2,13 +2,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_keyboard_arrow_left_black_24dp" />
 
     <com.highsoft.highcharts.core.HIChartView
         android:id="@+id/hc"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="8dp" />
+        android:layout_weight="6"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
 
 </LinearLayout>

@@ -28,6 +28,7 @@ import com.highsoft.highcharts.common.hichartsclasses.HIColumn;
 import com.highsoft.highcharts.common.hichartsclasses.HICredits;
 import com.highsoft.highcharts.common.hichartsclasses.HIExporting;
 import com.highsoft.highcharts.common.hichartsclasses.HIOptions;
+import com.highsoft.highcharts.common.hichartsclasses.HIPlotOptions;
 import com.highsoft.highcharts.common.hichartsclasses.HISeries;
 import com.highsoft.highcharts.common.hichartsclasses.HISubtitle;
 import com.highsoft.highcharts.common.hichartsclasses.HITitle;
@@ -87,6 +88,9 @@ public class MainActivity extends AppCompatActivity {
         mSpinnerMonth = findViewById(R.id.month_layout).findViewById(R.id.spinner_type);
 
         setSpinnerAdapters();
+
+
+
     }
 
     private void setSpinnerAdapters() {
@@ -131,18 +135,6 @@ public class MainActivity extends AppCompatActivity {
         hiCredits.setEnabled(false);
         options.setCredits(hiCredits);
 
-        HIXAxis xaxis = new HIXAxis();
-        xaxis.setCategories(new ArrayList<>(Arrays.asList("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13","14","15","16"  )));
-        options.setXAxis(new ArrayList<>(Collections.singletonList(xaxis)));
-
-        HIYAxis yAxis = new HIYAxis();
-        yAxis.setTitle(title);
-        yAxis.setShowFirstLabel(false);
-        yAxis.setShowLastLabel(false);
-        yAxis.setVisible(false);
-        options.setYAxis(new ArrayList<>(Collections.singletonList(yAxis)));
-
-
         ArrayList<String> hiColors = new ArrayList<>();
         hiColors.add("#DC555B");
         hiColors.add("#FEBD01");
@@ -153,18 +145,45 @@ public class MainActivity extends AppCompatActivity {
 
         options.setColors(hiColors);
 
-        Number[] columnData = new Number[] { 5, 1, 2, 5, 1, 5, 1, 4, 1, 3, 2, 1,1,2,3,4 };
+
+
+        HIXAxis xaxis = new HIXAxis();
+        xaxis.setCategories(new ArrayList<>(Arrays.asList("1", "2", "3", "4", "5", "6", "7")));
+        options.setXAxis(new ArrayList<>(Collections.singletonList(xaxis)));
+
+        HIYAxis yAxis = new HIYAxis();
+        yAxis.setTitle(title);
+        yAxis.setShowFirstLabel(false);
+        yAxis.setShowLastLabel(false);
+        yAxis.setVisible(false);
+        options.setYAxis(new ArrayList<>(Collections.singletonList(yAxis)));
+
+
+
+        Number[] columnData = new Number[] { 5, 1, 2, 5, 1, 5, 1 };
 
         HISeries hiSeries = new HISeries();
         hiSeries.setData(new ArrayList<>(Arrays.asList(columnData)));
         options.setSeries(new ArrayList<>(Arrays.asList(hiSeries)));
+
+
+        HIPlotOptions hiPlotOptions = new HIPlotOptions();
+        HIColumn hiColumn = new HIColumn();
+        hiColumn.setColors(hiColors);
+        hiColumn.setAllowPointSelect(false);
+
+        hiPlotOptions.setColumn(hiColumn);
+        options.setPlotOptions(hiPlotOptions);
 
         hiSeries.setName("");
         hiSeries.setShowInLegend(false);
         hiSeries.setAllowPointSelect(false);
 
 
+
+
         chartView.setOptions(options);
+        chartView.invalidate();
     }
 
     private void setSuggestionList() {

@@ -12,6 +12,8 @@
     <string name="budgeting_suggesting_based_your_profile">Budgeting Suggesting based on your profile!</string>
     <string name="purpose_of_budget">Purpose of budget</string>
     <string name="month">Month</string>
+    <string name="your_monthly_income">Monthly Income</string>
+    <string name="total_budget">Total Budget</string>
 
     <string-array name="type_array">
         <item>Select</item>
