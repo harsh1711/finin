@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private Spinner mSpinnerType, mSpinnerMonth;
     private String[] mTypeArray, mMonthArray;
     private ArrayAdapter<String> mTypeAdapter, mMonthAdapter;
-    private TextView budgetTitle,monthTitle;
+    private TextView budgetTitle, monthTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,39 +61,42 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setUpToolbar();
-
-        transactionsRecyclerView = findViewById(R.id.transactionsRecyclerViewLayout).findViewById(R.id.recyclerView);
-        suggestionRecyclerView = findViewById(R.id.suggestionRecyclerViewLayout).findViewById(R.id.recyclerView);
-
-        chartView = findViewById(R.id.hc);
-
-        startPrice = findViewById(R.id.start_price_layout).findViewById(R.id.price);
-        startPrice.setText("4,300");
-        startPrice.setTypeface(Typeface.DEFAULT_BOLD);
-        spendPrice = findViewById(R.id.spend_price_layout).findViewById(R.id.price);
-        spendPrice.setText("150/day");
-        endPrice = findViewById(R.id.end_price_layout).findViewById(R.id.price);
-        endPrice.setText("10,000");
-        endPrice.setTypeface(Typeface.DEFAULT_BOLD);
-
+        iniIds();
+        setPrices();
         setTransactionsList();
         setSuggestionList();
         setChartView();
+        setTitles();
+        setSpinnerAdapters();
+    }
 
-
-        budgetTitle = findViewById(R.id.purpose_budget_layout).findViewById(R.id.title);
+    private void setTitles() {
         budgetTitle.setText(getString(R.string.purpose_of_budget));
 
-        monthTitle = findViewById(R.id.month_layout).findViewById(R.id.title);
-        monthTitle.setText(getString(R.string.month));
 
+        monthTitle.setText(getString(R.string.month));
+    }
+
+    private void setPrices() {
+        startPrice.setText("4,300");
+        startPrice.setTypeface(Typeface.DEFAULT_BOLD);
+
+        spendPrice.setText("150/day");
+        endPrice.setText("10,000");
+        endPrice.setTypeface(Typeface.DEFAULT_BOLD);
+    }
+
+    private void iniIds() {
+        transactionsRecyclerView = findViewById(R.id.transactionsRecyclerViewLayout).findViewById(R.id.recyclerView);
+        suggestionRecyclerView = findViewById(R.id.suggestionRecyclerViewLayout).findViewById(R.id.recyclerView);
+        startPrice = findViewById(R.id.start_price_layout).findViewById(R.id.price);
+        chartView = findViewById(R.id.hc);
+        spendPrice = findViewById(R.id.spend_price_layout).findViewById(R.id.price);
+        endPrice = findViewById(R.id.end_price_layout).findViewById(R.id.price);
+        budgetTitle = findViewById(R.id.purpose_budget_layout).findViewById(R.id.title);
+        monthTitle = findViewById(R.id.month_layout).findViewById(R.id.title);
         mSpinnerType = findViewById(R.id.purpose_budget_layout).findViewById(R.id.spinner_type);
         mSpinnerMonth = findViewById(R.id.month_layout).findViewById(R.id.spinner_type);
-
-        setSpinnerAdapters();
-
-
-
     }
 
     private void setUpToolbar() {
@@ -120,8 +123,8 @@ public class MainActivity extends AppCompatActivity {
         setAdapterOptions(mMonthAdapter, mSpinnerMonth);
     }
 
-    private void setAdapterOptions(ArrayAdapter<String> adapter, Spinner spinner){
-        if(adapter != null && spinner != null) {
+    private void setAdapterOptions(ArrayAdapter<String> adapter, Spinner spinner) {
+        if (adapter != null && spinner != null) {
             adapter.setDropDownViewResource(R.layout.spineer_item);
             spinner.setAdapter(adapter);
         }
@@ -161,7 +164,6 @@ public class MainActivity extends AppCompatActivity {
         options.setColors(hiColors);
 
 
-
         HIXAxis xaxis = new HIXAxis();
         xaxis.setCategories(new ArrayList<>(Arrays.asList("1", "2", "3", "4", "5", "6", "7")));
         options.setXAxis(new ArrayList<>(Collections.singletonList(xaxis)));
@@ -174,8 +176,7 @@ public class MainActivity extends AppCompatActivity {
         options.setYAxis(new ArrayList<>(Collections.singletonList(yAxis)));
 
 
-
-        Number[] columnData = new Number[] { 5, 1, 2, 5, 1, 5, 1 };
+        Number[] columnData = new Number[]{5, 1, 2, 5, 1, 5, 1};
 
         HISeries hiSeries = new HISeries();
         hiSeries.setData(new ArrayList<>(Arrays.asList(columnData)));
@@ -193,8 +194,6 @@ public class MainActivity extends AppCompatActivity {
         hiSeries.setName("");
         hiSeries.setShowInLegend(false);
         hiSeries.setAllowPointSelect(false);
-
-
 
 
         chartView.setOptions(options);
