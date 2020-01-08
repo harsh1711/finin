@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">FinInUiApplication</string>
+
+    <string name="rs">\u20B9</string>
+    <string name="up_arrow"><font color="#ff0000">&#8593;</font></string>
+    <string name="food_drink_lbl">Food &amp; Drink</string>
+    <string name="add_bills">Add Bills</string>
+    <string name="on_track">On Track</string>
+    <string name="average_budget_per_day">Average budget per day is 120.</string>
+    <string name="transactions">Transactions</string>
+    <string name="edit">Edit</string>
+    <string name="budgeting_suggesting_based_your_profile">Budgeting Suggesting based on your profile!</string>
+</resources>
