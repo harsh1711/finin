@@ -72,10 +72,6 @@ public class MainActivity extends AppCompatActivity {
         endPrice.setText("10,000");
         endPrice.setTypeface(Typeface.DEFAULT_BOLD);
 
-
-        progressbar = findViewById(R.id.progressBar);
-        progressbar.setProgress(50);
-
         setTransactionsList();
         setSuggestionList();
         setChartView();

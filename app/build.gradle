@@ -42,5 +42,5 @@ dependencies {
     implementation "androidx.recyclerview:recyclerview:1.1.0"
     implementation 'com.highsoft.highcharts:highcharts:7.0.3'
     implementation 'com.google.code.gson:gson:2.8.5'
-
+    implementation 'com.sasank.roundedhorizontalprogress:roundedhorizontalprogress:1.0.1'
 }
