@@ -13,6 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -59,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        setUpToolbar();
+
         transactionsRecyclerView = findViewById(R.id.transactionsRecyclerViewLayout).findViewById(R.id.recyclerView);
         suggestionRecyclerView = findViewById(R.id.suggestionRecyclerViewLayout).findViewById(R.id.recyclerView);
 
@@ -91,6 +94,18 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    private void setUpToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+        Drawable backArrow = ContextCompat.getDrawable(this, R.drawable.ic_keyboard_arrow_left_blue);
+        getSupportActionBar().setHomeAsUpIndicator(backArrow);
+        getSupportActionBar().setTitle(getString(R.string.category_list));
+        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.black));
     }
 
     private void setSpinnerAdapters() {

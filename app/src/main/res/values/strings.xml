@@ -14,6 +14,7 @@
     <string name="month">Month</string>
     <string name="your_monthly_income">Monthly Income</string>
     <string name="total_budget">Total Budget</string>
+    <string name="category_list">Category List</string>
 
     <string-array name="type_array">
         <item>Monthly</item>
